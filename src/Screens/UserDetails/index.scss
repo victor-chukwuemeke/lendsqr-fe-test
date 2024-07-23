@@ -1,0 +1,158 @@
+@import '../../variable';
+
+.user__details {
+    // min-height: calc(200vh - 5.675rem);
+    // min-height: 250vh;
+    .back__to__prev__page {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        span {
+            font-size: 0.95rem;
+            color: $secondary;
+            @media screen and (max-width: 390px) {
+                font-size: 0.75rem;
+            }
+        }
+    }
+    @media screen and (max-width: 390px) {
+        .title {
+            font-size: 1rem;
+        }
+    }
+    .blacklist__user,
+    .activate__user {
+        font-size: 0.87rem;
+        border-radius: 8px;
+        letter-spacing: 1px;
+        padding: 0.5rem 1rem;
+        border-width: 1.8px;
+        border-style: solid;
+        text-transform: uppercase;
+        font-weight: 600;
+        @media screen and (max-width: 390px) {
+            font-size: 0.6rem;
+            padding: 0.5rem 0.7rem;
+        }
+    }
+    .blacklist__user {
+        color: $blacklist;
+        border-color: $blacklist;
+    }
+    .activate__user {
+        color: $tertiary;
+        border-color: $tertiary;
+    }
+    .details,
+    .complete__details {
+        background-color: $white-color;
+        box-shadow: 3px 5px 20px 0px #0000000a;
+        border-radius: 4px;
+        border: 1px solid fade-out($primary, 0.98);
+        overflow-x: auto;
+        .image {
+            --size: 6rem;
+            width: var(--size);
+            height: var(--size);
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: fade-out($secondary, 0.8);
+        }
+        .name {
+            white-space: nowrap;
+            text-transform: capitalize;
+            h4 {
+                font-size: 1.3rem;
+                color: #213f7d;
+                font-weight: 500;
+            }
+            span {
+                font-size: 0.9rem;
+                color: $secondary;
+            }
+        }
+        .user__tier {
+            position: relative;
+            margin: 0 3rem;
+            text-transform: capitalize;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: $secondary;
+            &::before,
+            &::after {
+                position: absolute;
+                content: '';
+                top: -1rem;
+                bottom: 0;
+                width: 1px;
+                height: 4.7rem;
+                background-color: fade-out($secondary, 0.85);
+            }
+            &::before {
+                left: -2rem;
+            }
+            &::after {
+                right: -2rem;
+            }
+        }
+        .bank__details {
+            color: $primary;
+            h4 {
+                font-size: 1.35rem;
+            }
+            .account__details {
+                font-size: 0.75rem;
+                text-transform: capitalize;
+            }
+        }
+        ul {
+            // width: fit-content;
+            li {
+                font-size: 0.95rem;
+                // text-transform: capitalize;
+                cursor: pointer;
+                border-bottom: 2px solid transparent;
+                color: fade-out(#000000, 0.2);
+                font-weight: 400;
+                padding: 0.4rem 1.2rem;
+                transition: border-bottom 0.3s color 0.25s ease-in;
+                &:hover,
+                &.active {
+                    border-bottom: 2px solid $tertiary;
+                    color: $secondary;
+                }
+            }
+        }
+    }
+    .personal__information {
+        &:not(:last-of-type) {
+            border-bottom: 1px solid fade-out($primary, 0.9);
+        }
+        // .d__grid {
+        //     > div {
+        //         display: grid;
+        //         grid-template-columns: repeat(1fr, 5);
+        //         // gri/d-template-rows: 3p;
+        //         grid-template-areas:
+        //             'box box box box box'
+        //             'box box box . .';
+        //         align-items: start;
+        //     }
+        // }
+        h5 {
+            color: $primary;
+        }
+        p {
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            color: $secondary;
+        }
+        h6 {
+            font-size: 0.9rem;
+            color: $secondary;
+        }
+    }
+}

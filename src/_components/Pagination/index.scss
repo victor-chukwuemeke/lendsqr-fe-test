@@ -1,0 +1,38 @@
+@import '../../variable';
+
+.pagination {
+    display: flex;
+    justify-content: end;
+    margin-top: 20px;
+    // background-color: #007bff;
+    button {
+        // margin: 0 5px;
+        // padding: 5px 10px;
+        // border: 1px solid #ccc;
+        // background-color: #fff;
+        cursor: pointer;
+        &.active {
+            // background-color: #007bff;
+            color: #545f7d;
+            font-weight: 600;
+        }
+        &.regular {
+            // background-color: #007bff;
+            color: #545f7d;
+            opacity: 60%;
+            font-weight: 600;
+        }
+        &:disabled {
+            // background-color: #f0f0f0;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+    }
+    span {
+        margin: 0 5px;
+        padding: 5px 10px;
+        border: 1px solid transparent;
+        color: #545f7d;
+        opacity: 60%;
+    }
+}

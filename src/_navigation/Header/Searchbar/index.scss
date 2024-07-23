@@ -1,0 +1,39 @@
+@import '../../../variable';
+
+.search-bar {
+    .search-form {
+        position: relative;
+        width: 23.7rem;
+        outline: 0;
+
+        input {
+            border: 1px solid fade-out($primary, 0.8) !important;
+            border-radius: 8px;
+            color: $secondary;
+            font-size: 0.85rem;
+            background: transparent;
+            width: 350px;
+            font-family: Avenir Regular;
+            padding: 0.5rem 3.75rem 0.5rem 1rem;
+        }
+
+        .search-button {
+            background-color: $tertiary;
+            position: absolute;
+            right: 0;
+            height: 100%;
+            width: 50px;
+            border-radius: 0px 8px 8px 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .search-form {
+            width: 100%;
+
+            input {
+                width: calc(100% - 50px);
+            }
+        }
+    }
+}

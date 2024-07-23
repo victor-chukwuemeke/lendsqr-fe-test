@@ -1,0 +1,128 @@
+@import '../../../variable';
+
+.nav-items {
+    .docs {
+        a {
+            color: $primary;
+            font-size: 14px;
+            font-family: Roboto;
+        }
+    }
+
+    .bell {
+        margin-right: 28px;
+        margin-left: 40px;
+        --value: 1.7rem;
+        height: var(--value);
+        width: var(--value);
+
+        img {
+            object-fit: contain;
+        }
+    }
+
+    .user-pill {
+        position: relative;
+        gap: 1rem;
+
+        .avatar {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .img {
+            height: 3.5rem;
+            width: 3.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #bbb;
+
+            img {
+                object-fit: cover;
+            }
+        }
+
+        .user-name {
+            font-size: 15px;
+            line-height: 18.77px;
+            display: inline-block;
+            font-weight: 500;
+            font-family: Work Sans;
+            color: $primary;
+        }
+
+        .drop-menu {
+            background-color: $white-color;
+            top: calc(100% + 10px);
+            box-shadow: $box-shadow;
+            left: 0;
+            right: 0;
+            transition: $trans1;
+            pointer-events: none;
+            z-index: 200;
+            border-radius: 5px;
+            position: absolute;
+            opacity: 0;
+
+            ul {
+                background-color: $white-color;
+                position: absolute;
+                transition: $trans1;
+                border-radius: 10px;
+                pointer-events: none;
+                opacity: 0;
+            }
+
+            &.open,
+            ul.open {
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            a {
+                color: $primary;
+                outline: none;
+            }
+
+            li {
+                border-radius: 10px;
+                padding: 10px 20px;
+                font-weight: 500;
+                font-size: 14px;
+                text-align: start;
+                color: $primary;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                svg {
+                    transform: scale(0.75);
+                }
+
+                &:hover {
+                    background-color: $primary;
+                    color: $white-color;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .docs {
+            a {
+                font-size: 12px;
+            }
+        }
+
+        .bell {
+            margin-right: 15px;
+            margin-left: 20px;
+        }
+
+        .user-pill .user-name {
+            font-size: 13px;
+        }
+    }
+}

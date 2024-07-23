@@ -1,0 +1,187 @@
+@import '../../variable';
+
+.login-container {
+    height: 100%;
+    background-color: $white-color;
+    overflow-y: scroll;
+    .logo {
+        padding: 6.5rem;
+        position: absolute;
+        transform: scale(0.9);
+    }
+    .custom-row {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+
+        .login_left_column {
+            flex: 0 0 51.1111111%;
+            max-width: 51.111111%;
+            padding: 5rem;
+
+            .banner_img {
+                padding-top: 10rem;
+                img {
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .login_right_column {
+            flex: 0 0 48.888889%;
+            max-width: 48.88889%;
+            box-shadow: 0px 15px 90px 0px rgba(0, 0, 0, 0.03);
+            border: 0.1px solid rgba(84, 95, 125, 0.04);
+            .form {
+                padding: 5rem 10rem 0rem 7rem;
+
+                h6 {
+                    color: $primary;
+                    font-family: Avenir Bold;
+                    font-size: 3rem;
+                    @media (max-width: 600px) {
+                        font-size: 2rem;
+                    }
+                }
+                p {
+                    color: $secondary;
+                    font-size: 1.5rem;
+                    font-family: Avenir Regular;
+                    @media (max-width: 600px) {
+                        font-size: 1rem;
+                    }
+                }
+                .form-group {
+                    .custom-field {
+                        position: relative;
+                        padding-top: 20px;
+                        input {
+                            padding: 12px 15px;
+                            font-family: Avenir Regular;
+                            font-size: 1.1rem;
+                            color: $secondary;
+                            border: 2px solid rgba(84, 95, 125, 0.15);
+
+                            &:focus,
+                            &:valid {
+                                border: 2px solid $tertiary;
+                                transition: $trans2;
+                                top: 8px;
+                                font-size: 1.1rem;
+                                box-shadow: 0 0 0 0rem rgba(13, 110, 253, 0);
+                                outline-color: transparent;
+                            }
+
+                            &:focus + .placeholders,
+                            &:valid + .placeholders {
+                                box-shadow: 0 0 0 0rem $tertiary;
+                                background-color: #fff;
+                                display: flex;
+                                justify-content: center;
+                                color: $secondary;
+                                transition: $trans2;
+                                padding: 5px;
+                                top: 20px;
+                                font-size: 1.1rem;
+                                outline-color: transparent;
+                            }
+                        }
+                        .toggle {
+                            color: $tertiary;
+                            position: absolute;
+                            right: 15px;
+                            bottom: 16px;
+                            font-weight: 600;
+                            text-transform: uppercase;
+                            font-family: Avenir Regular;
+                            letter-spacing: 1.1px;
+                            font-size: 11px;
+                            cursor: pointer;
+                        }
+                        .placeholders {
+                            position: absolute;
+                            left: 12px;
+                            top: calc(50% + 12px);
+                            transform: translateY(-50%);
+                            color: #989fb1;
+                            transition: all 0.3s ease, font-size 0.3s ease,
+                                color 0.3s ease;
+                            font-family: Avenir Regular;
+                            font-size: 1.1rem;
+                            pointer-events: none;
+                        }
+                    }
+                }
+                .error {
+                    background-color: #facdd8;
+                    border-radius: 4px;
+                    border: 0.5px solid #f7b8c8;
+                    p {
+                        color: #77021f;
+                        font-family: Work Sans;
+                        font-size: 14px;
+                    }
+                }
+                .forgot {
+                    padding: 20px 0px 28px 0px;
+                    a {
+                        color: $tertiary;
+                        text-decoration: none;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        font-family: Avenir Regular;
+                        letter-spacing: 1.1px;
+                        font-size: 11px;
+                    }
+                }
+                .login-button {
+                    background-color: $tertiary;
+                    color: #fff;
+                    font-family: Avenir Regular;
+                    letter-spacing: 1.1px;
+                    padding: 12px 10px;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    border-radius: 10px;
+                    &:hover {
+                        background-color: $tertiary-a;
+                    }
+
+                    .loader {
+                        border: 2px solid #f3f3f3; /* Light grey */
+                        border-top: 2px solid $tertiary; /* Blue */
+                        border-radius: 50%;
+                        width: 15px;
+                        height: 15px;
+                        animation: spin 1s linear infinite;
+                        display: inline-block;
+                    }
+
+                    @keyframes spin {
+                        0% {
+                            transform: rotate(0deg);
+                        }
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+                }
+                @media (max-width: 1150px) {
+                    padding: 5rem;
+                }
+                @media (max-width: 400px) {
+                    padding: 3rem;
+                }
+            }
+        }
+
+        @media (max-width: 800px) {
+            .login_left_column,
+            .login_right_column {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}

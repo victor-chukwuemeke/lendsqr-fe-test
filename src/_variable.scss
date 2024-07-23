@@ -1,0 +1,122 @@
+///--- COLORS ---///
+$primary: #213f7d;
+$secondary: #545f7d;
+$tertiary: #39cdcc;
+$tertiary-a: #39cdcc99;
+$blacklist: #e4033b;
+$color-5: #383838;
+
+$font: 'Work Sans';
+$white-color: #ffffff;
+$white-color-2: #ffffff98;
+$black-color: #000000;
+$background-color-2: linear-gradient(
+    90deg,
+    rgba(255, 152, 119, 0.1) 0%,
+    rgba(245, 59, 0, 0) 100%
+);
+$background-color-2a: linear-gradient(
+    90deg,
+    rgba(255, 152, 119, 0.05) 0%,
+    rgba(245, 59, 0, 0) 100%
+);
+$background-color-18: linear-gradient(to top, #1a1a1a 10%, #0095ff 100%);
+$background: #090909;
+$box-shadow: 0 0 10px rgba(51, 51, 51, 0.3);
+
+///--- TRANSITIONS ---///
+$trans1: all 0.3s ease-in;
+$trans2: all 0.35s ease-in;
+$trans3: all 0.14s ease-in;
+
+///--- ANIMATIONS ---///
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        margin-top: 20px;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        right: -20px;
+    }
+
+    to {
+        opacity: 1;
+        right: 40px;
+    }
+}
+
+@keyframes slideIn1 {
+    from {
+        opacity: 0;
+        top: 0px;
+    }
+
+    to {
+        opacity: 1;
+        top: 30px;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        right: 40px;
+    }
+
+    to {
+        opacity: 0;
+        right: -20px;
+    }
+}
+
+@keyframes slideOut1 {
+    from {
+        top: 30px;
+    }
+
+    to {
+        opacity: 0;
+        top: 0px;
+    }
+}
+
+@keyframes slideIn2 {
+    from {
+        opacity: 0;
+        right: 1rem;
+    }
+
+    to {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+@keyframes slideOut2 {
+    from {
+        opacity: 1;
+        right: 0;
+    }
+
+    to {
+        opacity: 0;
+        right: 1rem;
+    }
+}
+
+$fade1: fadeIn 0.15s ease-in;
+$slide1: slideIn 0.15s ease-in;
+$slide2: slideIn2 0.15s ease-in;
+$slide3: slideIn1 0.15s ease-in;
+$slideOut1: slideOut 0.15s ease-in;
+$slideOut2: slideOut1 0.15s ease-in;
+
+$slideOut3: slideOut2 0.15s ease-in;

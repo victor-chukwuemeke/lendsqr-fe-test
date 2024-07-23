@@ -1,0 +1,33 @@
+@import '../../variable';
+
+.header {
+    height: 5.675rem;
+    background-color: #fff;
+    box-shadow: 3px 0px 20px 0px rgba(0, 0, 0, 0.04);
+    z-index: 999;
+    transition: $trans1;
+
+    .logo-link {
+        width: 21rem;
+
+        .logo {
+            transform: scale(0.75);
+        }
+        @media (max-width: 978px) {
+            width: 100%;
+        }
+    }
+
+    .nav {
+        width: 100%;
+        padding: 0 50px;
+    }
+
+    @media (max-width: 978px) {
+        .nav {
+            padding: 0 10px;
+            margin-right: 4rem;
+            width: 0%;
+        }
+    }
+}

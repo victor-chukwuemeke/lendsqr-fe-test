@@ -1,0 +1,265 @@
+@import '../../variable';
+
+.sidebar {
+    width: 21rem;
+    height: calc(100vh - 5.675rem);
+    box-shadow: $box-shadow;
+    background-color: $white-color;
+    pointer-events: all;
+    overflow: hidden;
+    z-index: 100;
+    transition: $trans1;
+    overflow-y: scroll;
+    mask-image: linear-gradient(to top, transparent, black),
+        linear-gradient(to left, transparent 5px, black 5px);
+    mask-size: 100% 20000px;
+    mask-position: left bottom;
+    -webkit-mask-image: linear-gradient(to top, transparent, black),
+        linear-gradient(to left, transparent 5px, black 5px);
+    -webkit-mask-size: 100% 20000px;
+    -webkit-mask-position: left bottom;
+    transition: mask-position 0.3s, -webkit-mask-position 0.3s;
+
+    &:hover {
+        -webkit-mask-position: left top;
+        mask-position: left top;
+    }
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: 5px; /* Firefox */
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $secondary;
+        border-radius: 10px;
+    }
+
+    #sidebarIcon {
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        top: 0.5rem;
+    }
+
+    &.hidden {
+        width: 0;
+        min-width: 0;
+        pointer-events: none;
+
+        & > * {
+            pointer-events: none;
+        }
+    }
+
+    .switch-organization {
+        display: flex;
+        align-items: center;
+        padding: 0.8rem 0 0.8rem 2rem;
+        cursor: pointer;
+        margin: 1.3rem 0;
+        position: relative;
+        span {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: $secondary;
+            text-transform: capitalize;
+            margin: 0 0.5rem;
+        }
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 2rem;
+            width: 12rem;
+            background-color: $white-color;
+            box-shadow: $box-shadow;
+            pointer-events: none;
+            border-radius: 5px;
+            z-index: 1200;
+            transition: $trans1;
+            li {
+                padding: 0.7rem 2rem;
+                font-size: 0.85rem;
+                color: $primary;
+                text-transform: capitalize;
+                transition: $trans1;
+
+                &:hover {
+                    background-color: rgba(57, 205, 204, 0.06);
+                }
+            }
+        }
+    }
+
+    .sidebar_list {
+        li {
+            color: $primary;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 16px;
+            cursor: pointer;
+
+            label {
+                font-size: 0.71rem;
+                color: $secondary;
+                padding: 0 0 0 2rem;
+                text-transform: uppercase;
+                margin: 25px 0 3px;
+            }
+            a {
+                font-size: 0.95rem;
+                font-weight: 500;
+                color: fade-out($primary, 0.4);
+                padding: 0.75rem 0 0.75rem 2rem;
+                text-decoration: none;
+                background-color: transparent;
+                position: relative;
+                text-transform: capitalize;
+                margin: 6px 0 6px;
+                transition: color 0.35s, padding 0.25s ease;
+                svg {
+                    opacity: 0.4;
+                    transition: 0.2s ease-in;
+                }
+                span {
+                    padding-left: 0.6rem;
+                }
+                &:hover,
+                &.active {
+                    padding-left: 2.7rem;
+                    color: fade-out($primary, 0);
+                    background-color: rgba(57, 205, 204, 0.06);
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 3px;
+                        height: 100%;
+                        border-bottom-right-radius: 6px;
+                        border-top-right-radius: 6px;
+                        background-color: fade-out(#39cdcc, 0.25);
+                        transition: $trans1;
+                    }
+                    svg {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &.active {
+                a,
+                a .link {
+                    font-weight: 700;
+                }
+            }
+        }
+        .last {
+            a {
+                color: fade-out($primary, 0);
+                svg {
+                    opacity: 1;
+                }
+            }
+        }
+        hr {
+            margin-top: 3.5rem;
+            height: 1px;
+            background-color: $primary;
+            border: none;
+        }
+    }
+
+    .version {
+        font-size: 0.8rem;
+        color: $primary;
+        margin: 1.5rem 2rem 0;
+    }
+
+    @media only screen and (max-width: 978px) {
+        display: none;
+        z-index: 1500;
+        position: fixed;
+        background-color: #fff;
+
+        &.open {
+            display: block;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+}
+.sidebar-backdrop {
+    display: none;
+
+    @media only screen and (max-width: 978px) {
+        z-index: 1500;
+        position: fixed;
+        background-color: #00000085;
+
+        &.open {
+            display: block;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+        pointer-events: all;
+        transition: width 0.3s ease;
+    }
+
+    .sidebar_list li a {
+        padding-left: 1.5rem;
+
+        &.active {
+            padding-left: 2.5rem;
+        }
+    }
+
+    .sidebar .dropdown {
+        left: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+        pointer-events: all;
+        transition: width 0.3s ease;
+    }
+
+    .sidebar_list li a {
+        padding-left: 1.25rem;
+
+        &.active {
+            padding-left: 2rem;
+        }
+    }
+
+    .sidebar .dropdown {
+        left: 1.25rem;
+    }
+}
