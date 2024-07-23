@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+# Admin Dashboard Console
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is an admin dashboard console, which includes a login page, a user page with filters and pagination, and a detailed user information page. The project is built using modern JavaScript frameworks and libraries.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Login Page](#login-page)
+4. [User Page](#user-page)
+5. [User Details](#user-details)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To get started, clone the project from GitHub and install the necessary dependencies.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Step 1: Clone the repository
 
-### `npm test`
+```bash
+git clone https://github.com/victor-chukwuemeke/lendsqr-fe-test.git
+cd lendsqr-fe-test
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Step 2: Install Dependencies
 
-### `npm run build`
+We are installing with --legacy-peer-deps because some packages could be deprecated or old versions.
+`npm install --legacy-peer-deps`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Step 3: Start the application
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To start the application and view the admin dashboard prototype:
+`npm start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+When you run the application, it will open in your default web browser. The first page you will see upon mounting is the login page.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Login Page
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Only recognized and authenticated admins who have registered/signed up can access the dashboard.It is assumed that this user has registered and come over all the validation rules involved in siging up, Now the user wants to sign in, In this console, the valid credentials are:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`Email: test@example.com`
+`Password: Password123`
+Any other credentials will keep the login button disabled.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## User Page
 
-## Learn More
+Upon successful login, you will be directed to the user page where the header and sidebar for navigation are manifest. This page includes the following features:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### API Fetch: Fetches the user with some information, each of which is unique.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Pagination: Over 500 users are loaded or fetched from the API, This pagination enables navigation through multiple pages of users, clicking on the numbers on the pagination shows us the users on that page.
+
+#### Filters: Allows you to filter users based on various criteria(though this was just the design).
+
+#### Navigation: The Sidebar and header also allows for easy navigation through the app, though empty pages but they have working links and a notice that they are empty.
+
+## User Details
+
+Clicking on the three dots at the end of a user on the list shows options, click on view details to view a more comprehensive information of the selected user. This links to a page that displays all relevant information retrieved about this user(personal information, educational information, socials).
+
+## License
+
+This project is not licensed.
