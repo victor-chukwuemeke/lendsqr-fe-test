@@ -48,6 +48,7 @@ const Users: React.FC = () => {
     const indexOfLastItem = currentPage * itemsPerPage
     const indexOfFirstItem = indexOfLastItem - itemsPerPage
     const currentItems = formattedUsers.slice(indexOfFirstItem, indexOfLastItem)
+    console.log('🚀 ~ currentItems:', currentItems)
     const totalPages = Math.ceil(allUsers.length / itemsPerPage)
 
     const handlePageChange = (page: number) => {
@@ -85,7 +86,7 @@ const Users: React.FC = () => {
 
                 <div className="table-responsive p-4">
                     {IsRequestingAllUsers ? (
-                        <div className="d-flex justify-content-center">
+                        <div className="d-flex flex-column align-items-center justify-content-center">
                             <h6>loading still...?</h6>
                             <p className="text">check your your internet</p>
                         </div>
